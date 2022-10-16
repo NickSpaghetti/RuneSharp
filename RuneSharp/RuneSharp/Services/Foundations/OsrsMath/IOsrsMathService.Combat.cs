@@ -1,8 +1,8 @@
 using RuneSharp.Models.Osrs;
 
-namespace RuneSharp.Services.Foundations.OsRsMath;
+namespace RuneSharp.Services.Foundations.OsrsMath;
 
-public interface IOsRsMathService
+public partial interface IOsrsMathService
 {
     int GetCombatLevel(IEnumerable<OsrsSkill> skillList);
 
@@ -11,4 +11,6 @@ public interface IOsRsMathService
 
     double CalculateActualCombatLevel(int attack, int strength, int defence, int hitpoints, int magic,
         int ranged, int prayer);
+    
+    
 }

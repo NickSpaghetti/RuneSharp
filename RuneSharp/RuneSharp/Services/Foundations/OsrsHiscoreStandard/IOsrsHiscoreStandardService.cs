@@ -1,4 +1,5 @@
 using RuneSharp.Models.Osrs;
+using RuneSharp.Models.OsrsStandardAccount;
 
 namespace RuneSharp.Services.Foundations.OsrsHiscoreStandard;
 

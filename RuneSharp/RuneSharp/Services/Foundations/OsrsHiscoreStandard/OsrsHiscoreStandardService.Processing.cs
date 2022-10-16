@@ -1,6 +1,8 @@
 using RuneSharp.Constants;
 using RuneSharp.Models.Enums.Osrs;
 using RuneSharp.Models.Osrs;
+using RuneSharp.Models.Osrs.OsrsMinigames;
+using RuneSharp.Models.OsrsStandardAccount;
 
 namespace RuneSharp.Services.Foundations.OsrsHiscoreStandard;
 
@@ -87,9 +89,33 @@ public partial class OsrsHiscoreStandardService
 
     private void SetOsrsSkill(OsrsSkill skill, string level, string totalExperience, string rank)
     {
-        skill.Level = int.TryParse(level, out var tempLevel) ? tempLevel : throw new Exception();
-        skill.TotalExperience = long.TryParse(totalExperience, out var tempTotalXp) ? tempTotalXp : throw new Exception();
-        //skill.ExperienceToNextLevel
+        skill.Level.CurrentLevel = int.TryParse(level, out var tempLevel) ? tempLevel : throw new Exception();
+        skill.Level.CurrentExperience = long.TryParse(totalExperience, out var tempTotalXp) ? tempTotalXp : throw new Exception();
+        skill.Level.ExperienceToNextLevel = 0;
+        skill.Level.NextLevel = _osrsMath.GetNextLevel(skill.Level.CurrentLevel);
+        skill.Level.ExperienceToNextLevel = _osrsMath.ExperienceBetweenLevels(skill.Level.CurrentLevel,skill.Level.NextLevel);
         skill.Rank = long.TryParse(rank, out var tempRank) ? tempRank : throw new Exception();
+    }
+
+    public void ParseOsrsMinigames(IDictionary<OsrsMinigames, OsrsMinigame> minigames, string[] csvData)
+    {
+       
+    }
+
+    public void ParseOsrsMinigame(OsrsMinigames minigameName, int startIndex,
+        IDictionary<OsrsMinigames, OsrsMinigame> minigames, string[] csvData)
+    {
+        var minigame = minigames.TryGetValue(minigameName, out var tempMinigame) ? tempMinigame : null;
+        if (minigame is null)
+        {
+            throw new ArgumentNullException(nameof(minigame));
+        }
+        var rankIndex = startIndex++;
+        SetOsrsMinigame(minigame,csvData[rankIndex]);
+    }
+
+    private void SetOsrsMinigame(OsrsMinigame minigame, string rank)
+    {
+        minigame.Rank = long.TryParse(rank, out var tempRank) ? tempRank : throw new Exception();
     }
 }

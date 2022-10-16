@@ -2,33 +2,33 @@ using RuneSharp.Models.Enums.Osrs;
 using RuneSharp.Models.Osrs;
 using RuneSharp.Models.Osrs.Exceptions;
 
-namespace RuneSharp.Services.Foundations.OsRsMath;
+namespace RuneSharp.Services.Foundations.OsrsMath;
 
-public partial class OsRsMathService : IOsRsMathService
+public partial class OsrsMathService : IOsrsMathService
 {
     public int GetCombatLevel(IEnumerable<OsrsSkill> skills)
     {
         skills = skills.ToList();
         var attackLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Attack)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Attack));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Attack));
         
         var strengthLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Strength)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Strength));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Strength));
         
         var defenceLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Defense)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Defense));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Defense));
         
         var hitpointsLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Hitpoints)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Hitpoints));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Hitpoints));
         
         var magicLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Magic)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Magic));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Magic));
         
         var rangedLevelLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Range)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Range));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Range));
         
         var prayerLevel = skills.FirstOrDefault(s => s.Name == OsrsSkills.Prayer)
-            ?.Level ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Prayer));
+            ?.Level.CurrentLevel ?? throw new OsrsSkillNotFoundException(nameof(OsrsSkills.Prayer));
         
         return CalculateCombatLevel(attackLevel, strengthLevel, defenceLevel, hitpointsLevel, magicLevel, 
             rangedLevelLevel, prayerLevel);

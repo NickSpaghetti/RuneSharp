@@ -1,14 +1,20 @@
 using RuneSharp.Models.Enums.Osrs;
 using RuneSharp.Models.Osrs;
 using RuneSharp.Models.Osrs.Exceptions;
-using RuneSharp.Services.Foundations.OsRsMath;
+using RuneSharp.Models.Osrs.OsrsLevels;
+using RuneSharp.Services.Foundations.OsrsMath;
 
 namespace RuneSharp.Test.Services.Foundations.OsrsMath;
 
 public partial class OsrsMathTests
 {
-    private readonly IOsRsMathService _osRsMathService = new OsRsMathService();
-    
+    private readonly IOsrsMathService _osRsMathService = new OsrsMathService();
+
+    private static OsrsLevel GetLevel99() => new OsrsLevel
+    {
+        CurrentLevel = 99,
+        CurrentExperience = OsrsMathService.ExperienceAtLevel99
+    };
     [Test]
     public void GetCombatLevel_ThrowsSkillNotFoundException_Attack()
     {
@@ -17,32 +23,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             }
         };
 
@@ -61,32 +67,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         
@@ -104,32 +110,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         
@@ -147,32 +153,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         
@@ -190,32 +196,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         
@@ -233,32 +239,32 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         
@@ -276,27 +282,27 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             }
         };
         
@@ -316,37 +322,37 @@ public partial class OsrsMathTests
             new OsrsSkill
             {
                 Name = OsrsSkills.Attack,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Strength,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Defense,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Hitpoints,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Range,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Magic,
-                Level = 99
+                Level = GetLevel99()
             },
             new OsrsSkill
             {
                 Name = OsrsSkills.Prayer,
-                Level = 99
+                Level = GetLevel99()
             },
         };
         

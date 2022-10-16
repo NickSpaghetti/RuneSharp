@@ -1,6 +1,8 @@
 using RuneSharp.Models.Enums.Osrs;
+using RuneSharp.Models.Osrs;
+using RuneSharp.Models.Osrs.OsrsMinigames;
 
-namespace RuneSharp.Models.Osrs;
+namespace RuneSharp.Models.OsrsStandardAccount;
 
 public interface IOsrsStandardAccount
 {
@@ -9,4 +11,5 @@ public interface IOsrsStandardAccount
     int TotalLevel { get; set; }
     long TotalExperience { get; set; }
     IDictionary<OsrsSkills, OsrsSkill> Skills { get; }
+    IDictionary<OsrsMinigames,OsrsMinigame> Minigames { get; }
 }
