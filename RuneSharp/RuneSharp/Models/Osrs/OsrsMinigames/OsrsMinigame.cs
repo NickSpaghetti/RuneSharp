@@ -4,4 +4,5 @@ public class OsrsMinigame : IOsrsMinigame
 {
     public Enums.Osrs.OsrsMinigames Name { get; init; }
     public long Rank { get; set; }
+    public int TimesCompleted { get; set; }
 }

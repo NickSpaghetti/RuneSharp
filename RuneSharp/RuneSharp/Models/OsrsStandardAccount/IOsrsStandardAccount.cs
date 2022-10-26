@@ -8,6 +8,7 @@ public interface IOsrsStandardAccount
 {
     string UserName { get; set; }
     int CombatLevel { get; set; }
+    long StandardHiscoresRank { get; set; }
     int TotalLevel { get; set; }
     long TotalExperience { get; set; }
     IDictionary<OsrsSkills, OsrsSkill> Skills { get; }

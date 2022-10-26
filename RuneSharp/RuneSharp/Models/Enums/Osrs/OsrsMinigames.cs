@@ -2,9 +2,6 @@ namespace RuneSharp.Models.Enums.Osrs;
 
 public enum OsrsMinigames
 {
-    AbyssalSyre,
-    BountyHunter,
-    BountyHunterRogues,
     CastleWarGames,
     BarbarianAssultAttackers,
     BarbarianAssultDefenders,
@@ -60,9 +57,12 @@ public enum OsrsMinigames
     Sarachnis,
     Scorpia,
     Skotizo,
+    SoulWarsZeal,
+    Tempoross,
     TheGauntlet,
     TheCorruptedGauntlet,
     TheatreOfBlood,
+    TheatreOfBloodHardMode,
     ThermonuclearSmokeDevil,
     TombsOfAmascut,
     TombsOfAmascutExpertMode,
@@ -73,5 +73,5 @@ public enum OsrsMinigames
     Vorkath,
     Wintertodt,
     Zalcano,
-    Zulrah
+    Zulrah,
 }

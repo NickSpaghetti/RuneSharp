@@ -9,6 +9,8 @@ public class OsrsStandardAccount : IOsrsStandardAccount
 {
     public string UserName { get; set; } = string.Empty;
     public int CombatLevel { get; set; }
+    
+    public long StandardHiscoresRank { get; set; }
     public int TotalLevel { get; set; }
     public long TotalExperience { get; set; }
 
