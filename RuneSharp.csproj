@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Helpers\ParsersHelper\GrandExchangeParsers\OsRs\OsRsGrandExchangeParser.cs~RFb7e2804.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.8.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\AventureLog\" />
+    <Folder Include="Models\Npcs\Monsters\Metadata\Rs3\" />
+    <Folder Include="Models\Npcs\Npc\Rs3\" />
+    <Folder Include="Models\Npcs\Npc\OsRs\" />
+  </ItemGroup>
+
+</Project>
