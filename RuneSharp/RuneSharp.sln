@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuneSharp", "RuneSharp\RuneSharp.csproj", "{5A955A5A-2847-4A49-9C0B-DBA9FB9C819F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuneSharp.Test", "RuneSharp.Test\RuneSharp.Test.csproj", "{01B3683C-1B9F-4509-86C1-0153F2EBA02F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A955A5A-2847-4A49-9C0B-DBA9FB9C819F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A955A5A-2847-4A49-9C0B-DBA9FB9C819F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A955A5A-2847-4A49-9C0B-DBA9FB9C819F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A955A5A-2847-4A49-9C0B-DBA9FB9C819F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01B3683C-1B9F-4509-86C1-0153F2EBA02F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01B3683C-1B9F-4509-86C1-0153F2EBA02F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01B3683C-1B9F-4509-86C1-0153F2EBA02F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01B3683C-1B9F-4509-86C1-0153F2EBA02F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
